@@ -1,0 +1,703 @@
+
+.main {
+  padding: 1vw ;
+  display: flex;
+  font-family:  arial, sans-serif;
+  justify-content: space-around;
+  min-height: 85vh;
+  width: 100%;
+  position: relative;
+  background-color: var(--mainbgc);
+
+}
+
+.main-form {
+  width: 55%;
+  padding: 1vw;
+  transition: ease 1s;
+}
+
+.contentt form {
+  transition: ease 1s;
+  height: 100%;
+  border-radius: 8px;
+  background-color: var(--mainbgc);
+  box-shadow: var(--boxshadowblueForm);
+  border: var(--borderForm);
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.inner-div {
+  transition: ease 1s;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+}
+
+.contentt form .outer-div {
+  transition: ease 1s;
+  box-shadow: var(--boxshadowblueForm);
+  border: var(--borderForm);
+  background-color: var(--mainbgc);
+
+  line-height: 3vh;
+  margin: 0.8vw 0vw;
+  padding: 0.5vw 1vw;
+  width: 90%;
+  border-radius: 8px;
+
+}
+.contentt form .outer-divv {
+  transition: ease 1s;
+
+  border-radius: 8px;
+  box-shadow: var(--boxshadowblueForm);
+  border: var(--borderForm);
+  background-color: var(--mainbgc);
+
+  margin: 1.4vw 0vw;
+  padding: 1vw;
+  width: 90%;
+}
+.contentt form .outer-divv h3 {
+  width: 29%;
+}
+
+select {
+  border: 1px solid rgba(0, 57, 80, 0.294);
+  box-shadow: inset 2px 2px 5px -1px rgba(10, 99, 169, 0.16),
+  inset -5px -5px 5px -1px rgba(255, 255, 255, 0.7);
+  position: relative;
+  outline: none;
+  width: 100%;
+  border-radius: 8px;
+  padding: 0.6vw;
+  padding: 0.5vw;
+}
+.outer-div label{
+  width: 96%; font-size: 0.9vw; margin: 1px 0 0 0px;
+}
+.inner-div label{
+  width: 30px;
+}
+option {
+  border: 1px solid rgba(0, 57, 80, 0.294);
+  position: absolute;
+  width: 5vw;
+  outline: none;
+}
+.outer-div .mchbox{
+  width: 4%;
+  margin: 5px 0 0 10px;
+  box-shadow: none;
+  height: 1vw;
+}
+
+.inner-div .schbox{
+  width: 3%; margin: 0; box-shadow: none; height: 1vw;
+}
+
+textarea {
+  box-shadow: inset 2px 2px 5px -1px rgba(10, 99, 169, 0.16),
+  inset -5px -5px 5px -1px rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 57, 80, 0.294);
+  font-family: "Inter", sans-serif;
+  font-size: 1vw;
+  padding: 0.5vw;
+  height: 15vh;
+  width: 100%;
+
+  outline: none;
+}
+.contentt input {
+  box-shadow: inset 2px 2px 5px -1px rgba(10, 99, 169, 0.16),
+  inset -5px -5px 5px -1px rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 57, 80, 0.294);
+  width: 70%;
+  font-family: "Inter", sans-serif;
+  font-size: 1vw;
+  border-radius: 8px;
+  height: 5vh;
+  outline: none;
+  word-spacing: 2px;
+  padding: 0.5vw 1vw;
+}
+.main-form .contentt form input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 1px 1px 5px -1px rgba(10, 99, 169, 0.16),
+    -1px -1px 5px -1px rgba(0, 87, 104, 0.7);
+
+}
+button {
+  border-radius: 8px;
+  background-color:  #008cafdc;
+  padding: 0.8vw;
+  border: none;
+  outline: none;
+  width: 15%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  color: white;
+  cursor: pointer;
+  right: 0;
+  margin: 0vw 0 0 37.5vw;
+}
+
+.clearTextBtn{
+  border-radius: 8px;
+  background-color: rgb(160, 56, 56);
+  padding: 0.8vw;
+  border: none;
+  outline: none;
+  width: 12%;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7vh;
+  color: white;
+  margin: 0vw 0 0 39vw;
+}
+.clearTextBtn:hover{
+  background-color: rgb(156, 16, 16);
+  cursor: pointer;
+
+}
+button:hover {
+  background-color: rgb(0, 89, 130);
+    transform: scale(1.1);
+    transition: transform 0.1s ease-out;
+}
+h3 {
+  font-size: 1vw;
+  font-weight: 600;
+  width: 100%;
+  color: var(--allfontcolor);
+}
+label {
+  font-size: 1.2vw;
+}
+
+input .date{
+  width: 40%; height: 5vh;
+}
+input .time{
+  width: 40%; height: 5vh; font-size: 1.2vw;
+}
+
+h4 {
+  border-bottom: 1px solid rgba(0, 57, 80, 0.611);
+  width: 100%;
+  background-color: var(--headingcolor);
+  padding: 0.5vw 1vw;
+  font-size: 1.4vw;
+  text-align: center;
+  border-top-left-radius: 8px; 
+  border-top-right-radius: 8px; 
+  color: var(--mainbgc);
+}
+
+span {
+  color: rgba(0, 0, 0, 0.847);
+  font-size: 0.7vw;
+  width: 20vw;
+  font-weight: 600;
+}
+.inner-div .invalidspan{
+  width: 21%; 
+  margin-left: 21%;
+  color: var(--allfontcolor);
+  }
+  .inner-div .validspan{
+    width: 16%; 
+    color: var(--allfontcolor);
+  }
+
+.outer-div .totalcreditspan{
+  width: 21%; margin-left: 61%;
+  color: var(--allfontcolor);
+}
+.outer-div .smslengthspan{
+  width: 16%;
+  color: var(--allfontcolor);
+}
+
+ 
+ 
+
+.ScheduleContain {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.er1 span{
+  position: absolute;
+  color: red;
+  margin-left: 34%;
+  margin-top: -4vh;
+}
+
+/*             */
+
+.side-form {
+  width: 38%;
+  padding: 1vw;
+
+}
+.content form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+
+.sdiv1 {
+  border-radius: 8px;
+  box-shadow: var(--boxshadowblueForm);
+  border: var(--borderForm);
+  background-color: var(--mainbgc);
+  width: 100%;
+  margin:  0 0  1.4vw 0; 
+  min-height: 0vh;
+  transition: ease 1s;
+}
+ .innerSdiv1{
+  box-shadow: var(--boxshadowblueForm);
+  border: var(--borderForm);
+  background-color: var(--mainbgc);
+
+  max-height: 500px;
+  border-radius: 8px;
+  margin: 2.6vw 1vw 2.6vw 1vw;
+  padding: 1vw;
+  line-height: 0;
+  min-height: 0vh;
+  transition: ease 0.3s;
+}
+
+.sdiv1option {
+  margin: 10px 0 0 7.5vw;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: start;
+  width: 60%;
+}
+
+.sdiv1option button {
+  margin: 0vw 0vw 0 0vw;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 1px 1px 5px -1px rgb(0, 61, 107),
+    -1px -1px 5px -1px rgb(0, 61, 107);
+  border: none;
+  font-size: 0.9vw;
+  padding: 3vh 1vw;
+  width: 50%;
+  background-color: var(--headingcolor);
+  font-weight: 600;
+  color:  var(--mainbgc);
+}
+
+.sdiv12{
+  min-height: 0vh;
+  gap: 20px;
+}
+.sdiv1option .clicked {
+  background-color: rgb(35, 0, 140); /* Change to your desired color */
+  color: white; /* Change to your desired color */
+}
+
+.overlay1,
+.overlay2 {
+  border: 1px solid rgba(0, 57, 80, 0.294);
+  box-shadow: inset 5px 5px 5px -1px rgba(10, 99, 169, 0.16),
+  inset -5px -5px 5px -1px rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+}
+
+.over1 {
+  margin: 1vw;
+  display: flex;
+  text-align: center;
+}
+.over1 h5{
+  color: black
+}
+.over1 input {
+  margin: -8px 5px 0 0;
+  overflow: hidden;
+  width: 5%;
+}
+.over21 {
+  display: flex;
+}
+
+.over21 a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+.over21 h5{
+  color: var(--allfontcolor);
+}
+.overlay2 .cfile {
+padding: 1vw 0 0 ;
+}
+.overlay2 .cfile input {
+  width: auto;
+  padding: 1vw;
+  height: 6vh;
+  background-color: white;
+}
+.cfile button {
+  margin: 0vw 0 0 20vw;
+  width: 30%;
+}
+.bx{
+  margin-left: 22vw;
+  cursor: pointer;
+}
+.chatbx{
+  margin-left: 21vw;
+  cursor: pointer;
+}
+
+
+
+
+
+
+@media (max-width: 450px ) {
+  /* … */
+  .main {
+    flex-direction: column;
+    background-color: var(--mainbgc);
+    padding: 1vw 2vw;
+  }
+  .main-form {
+    width: 100%;
+    padding: 1vw;
+  }
+  .side-form {
+    width: 100%;
+    padding: 1vw;
+  }
+
+  h4 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 10px;
+  }
+  select {
+    border-radius: 4px;
+    width: 100%;
+    font-size: 10px;
+  }
+  textarea {
+    border-radius: 4px;
+    padding: 7px;
+    width: 100%;
+    font-size: 10px;
+    height: 50px;
+  }
+  span{
+    margin: -2vw 0 0 0;
+    height: 10px;
+    font-size: 7px;
+    width: 100px;
+  }
+  .inner-div .invalidspan{
+   margin-left: -51%;
+   width: 27%;
+  }
+  .inner-div .validspan{
+    width: 20%; 
+  }
+ 
+  .outer-div .totalcreditspan{
+    width: 30%;    margin-left: 57%;
+    margin-top: -10px;
+  }
+  button {
+  
+    width: 55px;
+    height: 20px;
+    font-size: 10px;
+    right: 0;
+    margin: 0vw 0 0 70vw;
+  }
+  .clearTextBtn{
+    width: 54px;
+    height: 16px;
+    font-size: 9px;
+    right: 0;
+    margin: 2vw 0 0 70vw;
+  }
+  .outer-div .mchbox{
+    width: 4%;
+    margin: 0px 0 0 10px;
+    box-shadow: none;
+    height: 9px;
+  }
+  .inner-div .schbox{
+    margin: 0;
+    width: 4%;
+    box-shadow: none;
+    height: 10px;
+  }
+  .outer-div label{
+    width: 96%; font-size: 9px; margin: 0px 0 0 0px;
+  }
+  .inner-div label{
+    width: 30px;
+  }
+  .ScheduleContain input.date{
+    width: 40%; height: 20px;
+  }
+  .ScheduleContain input.time{
+    width: 40%; height: 20px; font-size: 1.2vw;
+  }
+  /* side form   */
+  .innerSdiv1{
+    margin: 2.6vw 5vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .sdiv1option {
+    margin: 10px 0 0 18vw;
+  }
+  .sdiv1{
+    margin:5px 0 ;
+  }
+  .sdiv12{
+    min-height: 0vh;
+    gap: 40px;
+    margin: 20px 0;
+    /* background-color: red; */
+  }
+
+  .sdiv1option button {
+    width: 200px;
+    padding: 15px;
+    font-size: 10px;
+  }
+  .overlay1,
+.overlay2 {
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+}
+.over1 input {
+  margin: -8px 5px 0 0;
+  overflow: hidden;
+  width: 3%;
+}
+.over1 h5 {
+  font-size: 10px;
+}
+h4 {
+  font-size: 13px;
+  text-align: start;
+}
+.bx{
+  margin-left: 22vw;
+}
+.bx{
+  margin-left: 64vw;
+  cursor: pointer;
+}
+.chatbx{
+  margin-left: 62vw;
+  cursor: pointer;
+}
+
+}
+
+
+
+
+
+@media (max-width: 900px ) {
+  /* … */
+  .main {
+    flex-direction: column;
+    background-color:  var(--mainbgc);
+    padding: 1vw 2vw;
+  }
+  .main-form {
+    width: 100%;
+    padding: 1vw;
+  }
+  .side-form {
+    width: 100%;
+    padding: 1vw;
+  }
+
+  h4 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 10px;
+  }
+  select {
+    border-radius: 4px;
+    width: 100%;
+    font-size: 10px;
+  }
+  textarea {
+    border-radius: 4px;
+    padding: 7px;
+    width: 100%;
+    font-size: 10px;
+    height: 50px;
+  }
+  span{
+    margin: -2vw 0 0 0;
+    height: 10px;
+    font-size: 7px;
+    width: 100px;
+  }
+  .inner-div .invalidspan{
+   margin-left: -51%;
+   width: 27%;
+  }
+  .inner-div .validspan{
+    width: 20%; 
+  }
+ 
+  .outer-div .totalcreditspan{
+    width: 30%;    margin-left: 57%;
+    margin-top: -10px;
+  }
+
+  .textbtn{
+    width: 50px;
+  }
+
+  button {
+  
+    width: 10vw;
+    height: 20px;
+    font-size: 10px;
+    right: 0;
+    margin: 0vw 0 0 70vw;
+  }
+  .clearTextBtn{
+    width: 54px;
+    height: 16px;
+    font-size: 9px;
+    right: 0;
+    margin: 2vw 0 0 70vw;
+  }
+  .outer-div .mchbox{
+    width: 4%;
+    margin: 0px 0 0 10px;
+    box-shadow: none;
+    height: 9px;
+  }
+  .inner-div .schbox{
+    margin: 0;
+    width: 4%;
+    box-shadow: none;
+    height: 10px;
+  }
+  .outer-div label{
+    width: 96%; font-size: 9px; margin: 0px 0 0 0px;
+  }
+  .inner-div label{
+    width: 30px;
+  }
+  .ScheduleContain input.date{
+    width: 40%; height: 20px;
+  }
+  .ScheduleContain input.time{
+    width: 40%; height: 20px; font-size: 1.2vw;
+  }
+  /* side form   */
+  .innerSdiv1{
+    margin: 2.6vw 5vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .sdiv1option {
+    margin: 10px 0 0 18vw;
+  }
+  .sdiv1{
+    margin:5px 0 ;
+  }
+  .sdiv12{
+    min-height: 0vh;
+    gap: 40px;
+    margin: 20px 0;
+    /* background-color: red; */
+  }
+
+  .sdiv1option button {
+    width: 200px;
+    padding: 4px;
+    height: 20px;
+    font-size: 8px;
+  }
+  .overlay1,
+.overlay2 {
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+}
+.over1 input {
+  margin: -8px 5px 0 0;
+  overflow: hidden;
+  width: 3%;
+}
+.over1 h5 {
+  font-size: 10px;
+}
+h4 {
+  font-size: 13px;
+  padding: 10px;
+  text-align: start;
+}
+
+.over21{
+padding: 10px;
+}
+.cfile button{
+    margin-left: 50vw;
+}
+
+
+/* .chatbx{
+  margin-left: 90vw;
+  cursor: pointer;
+} */
+
+}

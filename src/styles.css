@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --allfontcolor: #000000;
+  --mainbgc: #f6ffff;
+  --headingcolor:rgb(0, 89, 130);
+  --boxshadowblueForm:1px 1px 5px -1px rgb(0, 61, 107),
+  -1px -1px 5px -1px rgb(0, 61, 107);
+  --borderForm:none;
+}
+
+.dark-mode {
+  --allfontcolor: white;
+  --mainbgc: black;
+  --headingcolor:white;
+  --boxshadowblueForm:none;
+  --borderForm:1px solid white;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: block;
+  width: 10em;
+  overflow: auto;
+  height: 2em;
+  padding: 1em;
+  margin: 1em auto;
+  width: 10px;
+  height: 8px;
+  background-color: white;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(83, 122, 0);
+}
+
+/* @media screen and (max-width: 415px) {
+* {
+      background-color: lightgreen;
+      font-size: 15px;
+    }
+  } */

@@ -1,0 +1,254 @@
+<div class="main">
+  <div class="main-form">
+    <div class="contentt">
+      <form [formGroup]="quicksms">
+        <h4>Send SMS</h4>
+        <div class="outer-divv">
+          <h3>Sender ID</h3>
+          <select formControlName="sender" [ngClass]="{'is-invalid':submitted && quicksms.get('sender')?.errors}" >
+            <option value="">--Select--</option>
+            <option value="NUEVAS">NUEVAS</option>
+            <option value="TRKZIA">TRKZIA</option>
+          </select>
+          <div *ngIf="submitted || quicksms.get('sender')?.invalid && (quicksms.get('sender')?.dirty || (quicksms.get('sender')?.touched))">
+            <div class="er1" *ngIf=" quicksms.get('sender')?.hasError('required')" ><span>Please Select Sender ID</span></div>
+          </div> 
+          <!-- </div>
+        <div class="outer-div"> 
+      [(ngModel)]="selectedOption" -->
+          <h3>Template</h3>
+          <select formControlName="templateid" (change)="updateText()"  [ngClass]="{'is-invalid':submitted && quicksms.get('templateid')?.errors}">
+            <option value="">--Select--</option>
+            <option value="1707161891201501738">
+              Your My SMS verification Code id 12. Do not share this code with
+              others Team Nuevas
+            </option>
+            <option value="1707161855199873979">
+              Dear User your OTP is 12 Kindly use OTP to validate your
+              Registration. Team Trackzia
+            </option>
+            <option value="1707161899992775140">
+              Dear 12 , Your Complaint with Complaint Id:21 has Been Resolve
+              Kindly Share OTP, The OTP is 43 \n From Nuevas
+            </option>
+          </select>
+          <div *ngIf="submitted || quicksms.get('templateid')?.invalid && (quicksms.get('templateid')?.dirty || (quicksms.get('templateid')?.touched))">
+            <div class="er1" *ngIf=" quicksms.get('templateid')?.hasError('required')" ><span >Please Select Template </span></div>
+          </div> 
+        </div>
+        <div class="outer-div">
+          <h3>Mobile NO</h3>
+          <textarea formControlName="mob" [ngClass]="{'is-invalid':submitted && quicksms.get('mob')?.errors}"
+            cols="30" rows="10" placeholder="You can add upto 50,000 Phone Numbers" >
+          </textarea>
+          <div *ngIf="submitted || quicksms.get('mob')?.invalid && (quicksms.get('mob')?.dirty || (quicksms.get('mob')?.touched))">
+            <div class="er1" *ngIf=" quicksms.get('mob')?.hasError('required')" ><span >Please Enter Mobile Numbers </span></div>
+          </div>
+          <div class="inner-div">
+            <span  class="validspan">Mobile No Count :{{ validCount }}</span>
+            <span class="invalidspan"  >Invalid Mobile No Count :{{ InvalidCount }}</span>
+          </div>
+          <button class="clearTextBtn" (click)="clearTextarea()">Clear Text</button>
+        </div>
+        <div class="outer-div">
+          <h3>
+            Message
+            <input
+              type="checkbox"
+              class="mchbox"
+              formControlName="coding"/>
+            <label 
+              >Unicode (Hindi, Marathi SMS)</label
+            >
+          </h3>
+
+          <textarea [value]="selectedOptionText" (input)="calculateCharacterCount()"
+            formControlName="msg"
+            cols="30"
+            rows="10"
+            [ngClass]="{'is-invalid':submitted && quicksms.get('msg')?.errors}"
+            placeholder="You can add upto 500 characters"
+          ></textarea>
+          <div *ngIf="submitted || quicksms.get('msg')?.invalid && (quicksms.get('msg')?.dirty || (quicksms.get('msg')?.touched))">
+            <div class="er1" *ngIf=" quicksms.get('msg')?.hasError('required')" ><span >Please Enter Message </span></div>
+          </div>
+          <span class="smslengthspan" >SMS length : {{ characterCount }} Text :{{textC}}</span>
+            <span class="totalcreditspan" >Total Credit Charge: {{TotalCreditChages}}</span>
+        </div>
+        <div class="outer-div">
+          <div class="inner-div">
+            <input
+              type="checkbox"
+              class="schbox"      
+              (click)="doSomething()"
+             
+            />
+            <h3 style="margin: 1px 0 0 5px">Schedule</h3>
+          </div>
+
+          <div
+            class="ScheduleContain"
+            formControlName="ScheduleContain"
+            *ngIf="isChecked"
+          >
+            <div class="inner-div">
+              <label for="">Date:</label>
+              <input
+                formControlName="date"
+                class="date"
+                type="date"
+               
+              />
+              <label for="">Time:</label>
+              <input
+                formControlName="time"
+                class="time"
+                type="time"
+                
+              />
+            </div>
+          </div>
+          <div>
+            <button style="width: 15%; margin-top: 10px" type="submit" (click)="SendMsg()">
+              Send
+            </button>
+          </div>
+        </div>
+        <div class="outer-div">
+          <h3>Test Numbers</h3>
+          <textarea
+          formControlName="testmob"
+            cols="30"
+            rows="10" 
+            placeholder="Enter the Mobile Numbers"
+          ></textarea>
+          <!-- <div class="inner-div">
+            <span style="width: 16%">Mobile No Count :{{ validCount }}</span>
+            <span style="width: 21%; margin-left: 20%"
+              >Invalid Mobile No Count :{{ InvalidCount }}</span>
+          </div> -->
+          <!-- (click)="testSMS()" -->
+          <button type="submit" class="textbtn"  >Test SMS</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="side-form">
+    <div class="content">
+      <form [formGroup]="sideform">
+        <div class="sdiv1">
+          <h4>
+            Select Option
+            <i
+              class="bx bxs-chevron-down"
+              (click)="hideDiv1()"
+            ></i>
+          </h4>
+          <div class="innerSdiv1"  *ngIf="hideGroup">
+            
+            <div class="sdiv1option" >
+              <button (click)="showFirstdiv()" >
+               Groups
+              </button>
+              <button (click)="showSecondiv()">
+                Choose File(.xlx,.txt,.csv)
+              </button>
+            </div>
+            <div >
+              <div class="overlay1" *ngIf="showFirst">
+                <div class="over1">
+                  <input type="checkbox" formControlName="displayArray" [checked]="isAllselect" (change)="UpdateTextAreaFirst($event)" />
+                  <h5>Select All</h5>
+                </div>
+                <div class="over1">
+                  <input type="checkbox" formControlName="displayArray" [checked]="isPooselect" (change)="UpdateTextAreaSnd($event)" />
+                  <h5>Manager (2)</h5>
+                </div>
+                <div class="over1">
+                  <input type="checkbox" formControlName="displayArray" [checked]="isTextselect" (change)="UpdateTextAreaTrd($event)"/>
+                  <h5>Employee (1)</h5>
+                </div>
+              </div>
+              <div class="overlay2" *ngIf="showSecond">
+                <div class="over21">
+                  <h5>Download .xls File Format</h5>
+                  <a href="../../assets/Phone.xlsx">Click Here</a>
+                </div>
+                <div class="cfile">
+                  <input type="file" (change)="onFileSelected($event)" />
+                  <button (click)="importContacts()">Import Contacts</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+        <div class="sdiv1 sdiv12">
+          <h4>
+            Select Chatbot
+            <i
+              class="bx chatbx bxs-chevron-down"
+              (click)="hideDiv2()"
+            ></i>
+          </h4>
+        
+            <div class="innerSdiv1"  *ngIf="hideChatbot">
+              <h3  style="margin: 10px">Select Chatbot</h3>
+            <select formControlName="chatbot" >
+              <option value="">--Select--</option>
+              <option value="">ChatGPT</option>
+              <option value="">Google Bard</option>
+              <option value="">Microsoft Copilot</option>
+            </select>
+            </div>
+         
+        </div>
+
+        <div class="sdiv1">
+          <h4>
+            Select Media
+            <i
+              class="bx bxs-chevron-down"
+              
+              (click)="hideDiv3()"
+            ></i>
+          </h4>
+          <div class="innerSdiv1" *ngIf="hideMedia">
+            <div class="sdiv1option" >
+              <button (click)="showFirstddiv()" >
+               Image
+              </button>
+              <button (click)="showSeconddiv()" >
+                Video
+              </button>
+            </div>
+            <div >
+              <div class="overlay1" *ngIf="showFirstt" >
+                <h3  style="margin: 10px">Select Image</h3>
+                <select formControlName="img" (change)="getSelectedImage($event)">
+                  <option value="">--Select--</option>
+                  <option *ngFor="let image of images" [value]="image.value">{{image.name}}</option>
+                </select>
+                <div *ngIf="imageAvailable">
+                  <img src={{imgpath}} style="height: 20vh; width: 10vw;margin: 1vw 0 0 10vw;">
+                </div>
+              </div>
+              <div class="overlay2" *ngIf="showSecondd">
+                <h3 style="margin: 10px">Select Video</h3>
+
+                <select formControlName="vdo" (change)="getSelectedVideo($event)">
+                  <option value="">--Select--</option>
+                  <option *ngFor="let video of videos" [value]="video.value">{{video.name}}</option>
+                </select>
+                <div *ngIf="videoAvailable">
+                  <video  controls src={{videopath}} style="height: 22vh; width: 15vw;margin: 1vw 0 0 7vw;"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,230 @@
+<div class="main-header">
+  <div class="upper-h">
+    <div class="balance-div">
+      <ul class="outer-ul curentdate">
+        <li>
+          <h4>{{ currentDate | date : "medium" }}</h4>
+        </li>
+      </ul>
+
+      <ul class="outer-ul bldiv" (click)="loadCount()">
+        <li>
+          <h4>
+            Balance
+            <i class="bx bxs-chevron-down"></i>
+          </h4>
+          <ul class="dropdown" >
+            <li>
+              SMS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                >:&nbsp;{{count}}</span
+              >
+            </li>
+            <li>My SMS&nbsp;&nbsp;&nbsp;<span>:0</span></li>
+            <li>Notification<span>:0</span></li>
+            <li>Whatsapp<span>:0</span></li>
+            <li>Voicecall<span>:0</span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="rotate">
+      <h4>
+        View DLT Approved Sender ID List in Support Section 🡺
+      </h4>
+    </div>
+
+
+    <div [ngStyle]="dynamicStyles"  >
+      <button style="z-index: 9999;"  class="themebtn" (click)="toggleMode()">Theme</button>
+    </div>
+    <!-- notificationn -->
+    <div class="profile-div">
+      <div class="profile">
+        <ul class="outer-ul" >
+          <li>
+            <h4 style="width: 0;">
+              <i class="bx bxs-help-circle"></i>        
+            </h4>
+            <ul class="dropdown" style="text-align: left; margin-top: 2.4vw; width: 14vw;">
+              <li>+91 8600987604</li>
+              <li>support@nuevastech.com</li>
+              <li>KYC Registration</li>
+              <li ><a href="../../assets/DLT_SENDERID_LIST.pdf"  style="text-decoration: none; color: rgb(0, 0, 0);">DLT Aprroved Sender ID List</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- <div class="support n-icn">
+        <i class="bx bxs-help-circle" style="font-size: 1.4vw"></i>
+      </div> -->
+      <div class="notificationn" style="position: relative">
+        <i class="bx bxs-envelope"></i>
+        <span
+          style="
+            width: auto;
+            font-size: 10px;
+            padding: 2px;
+            position: absolute;
+            border-radius: 5px;
+            color: white;
+          "
+          >10&nbsp;</span
+        >
+      </div>
+
+      <div class="balance-div balancetwo " style="border: none;">
+      <ul class="outer-ul" (click)="loadCount()">
+        <li>
+          <i class="bx bxs-user-circle" ></i>
+          <h4>
+            
+            Username
+            <i class="bx bxs-chevron-down"></i>
+          </h4>
+          <ul class="dropdown">
+            <li><i class="bx bxs-user-circle" style="font-size: 1vw; margin-right: 5px; color: white;"></i>Profile</li>
+            <li>Change Password</li>
+            <li>Bank Details</li>
+            <li><i class="bx bxs-lock-alt-circle" style="font-size: 1vw; margin-right: 5px; color: white;"></i>Logout</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+
+  <div class="main-nav">
+    <div class="menuicon" (click)="toggleMenu()">
+      <i class="bx bxs-dashboard"></i>
+    </div>
+    <ul class="outer-ul first-outerul"  *ngIf="menuvisible">
+
+
+      <li>
+        <h4>
+          <div  routerLink="/dashboard">
+            <i class="bx bxs-dashboard"></i>
+            Dashboard
+          </div>
+        </h4>
+      </li>
+      <li>
+        <h4>
+          <div><i class="bx bxs-network-chart"></i> API</div>
+          <!-- <i class="bx bxs-chevron-down"></i> -->
+        </h4>
+        <ul class="dropdown">
+          <li>API Document</li>
+          <li>New API Document 2.0</li>
+        </ul>
+      </li>
+      <li>
+        <h4>
+          <div>
+            <i class="bx bxs-group"></i>
+            Manage Item
+          </div>
+          <!-- <i class="bx bxs-chevron-down"></i> -->
+        </h4>
+        <ul class="dropdown">
+          <li>Manage Sender ID</li>
+          <li>Manage Templet</li>
+          <li>Manage Whatsapp Templet</li>
+          <li>Manage Chatbot</li>
+          <li>Create and Assign Agent</li>
+          <li>Manage Group</li>
+          <li>Manage Whatsapp Studio</li>
+        </ul>
+      </li>
+      <li>
+        <h4>
+          <div>
+            <i class="bx bxs-report"></i>
+            View Reports
+          </div>
+          <!-- <i class="bx bxs-chevron-down"></i> -->
+        </h4>
+        <ul class="dropdown">
+          <li routerLink="/misreport">Quick SMS Report</li>
+          <li>Whatsapp Report</li>
+          <li>Advance SMS Report</li>
+          <li>Chatbot Conversation Report</li>
+          <li>Chatbot Viewv Count Report</li>
+          <li>Customize SMS Report</li>
+          <li>Opt-in SMS Report</li>
+          <li>API/Test-SMS Report</li>
+          <li>Detailed API/Test SMS Report</li>
+          <li>Schedule SMS Report</li>
+          <li>MIS Report</li>
+          <li>Refund Report</li>
+          <li>Campaign History Report</li>
+        </ul>
+      </li>
+ </ul>
+
+
+ <ul class="outer-ul second-outerul"  *ngIf="menuvisible">
+
+
+      <li>
+        <h4>
+          <div>
+            <i class="bx bxs-message-dots"></i>
+            Send sms
+          </div>
+          <!-- <i class="bx bxs-chevron-down"></i> -->
+        </h4>
+        <ul class="dropdown">
+          <li routerLink="/">Quick SMS</li>
+          <li>Advance SMS</li>
+          <li>Customize SMS</li>
+          <li>Opt-in SMS</li>
+        </ul>
+      </li>
+      <li>
+        <h4>
+          <div>
+            <i class="bx bxs-message-rounded"></i>
+            Whatsapp
+          </div>
+        </h4>
+      </li>
+      
+      
+      <li>
+        <h4>
+          <div><i class="bx bxs-cog"></i> Voice Call</div>
+          <!-- <i class="bx bxs-chevron-down"></i> -->
+        </h4>
+        <ul class="dropdown">
+          <li>My Profile</li>
+        </ul>
+      </li> 
+      <li>
+        <h4>
+          <div><i class="bx bxs-cog"></i> Google RCS</div>
+          <!-- <i class="bx bxs-chevron-down"></i> -->
+        </h4>
+        <ul class="dropdown">
+          <li>My Profile</li>
+        </ul>
+      </li> 
+      <li>
+        <h4>
+          <div><i class="bx bxs-cog"></i> MySms</div>
+          <!-- <i class="bx bxs-chevron-down"></i> -->
+        </h4>
+        <ul class="dropdown">
+          <li>My Profile</li>
+        </ul>
+      </li> 
+     
+    </ul>
+    
+     
+    
+  </div>
+</div>
+
+
